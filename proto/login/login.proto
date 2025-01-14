@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package login;
+option go_package = "pbmsg/login";
+
+import "error.proto";
+
+enum LoginErrorCode {
+  LoginErrorInvalidLoginType = 0 [(basepb.error_info) = {tip_desc:"无效的登录类型"}];
+  LoginErrorTokenExpired = 1 [(basepb.error_info) = {tip_desc:"token已过期"}];
+  LoginErrorAccountIsNotRegistered = 2 [(basepb.error_info) = {tip_desc:"账号未注册"}];
+  LoginErrorAccountIsRegistered = 3 [(basepb.error_info) = {tip_desc:"账号已注册请登录"}];
+  LoginErrorFormatError = 4 [(basepb.error_info) = {tip_desc:"账号格式不符合要求"}];
+  LoginErrorPasswordFormatError = 5 [(basepb.error_info) = {tip_desc:"密码格式不符合要求"}];
+  LoginErrorNotRealNameAuthentication = 6 [(basepb.error_info) = {tip_desc:"账号未实名认证"}];
+  LoginErrorAccountIsWrong = 7 [(basepb.error_info) = {tip_desc:"账号密码错误"}];
+  LoginErrorAuthenticationNotApproved = 8 [(basepb.error_info) = {tip_desc:"账号认证不通过"}];
+  LoginErrorAgeLimit = 9 [(basepb.error_info) = {tip_desc:"年龄限制"}];
+  LoginErrorLimitPlayTimeConfigWrong = 10 [(basepb.error_info) = {tip_desc:"未成年游玩时间配置错误"}];
+  LoginErrorFeedbackContentTooLong = 11 [(basepb.error_info) = {tip_desc:"反馈内容长度需在200字符以内"}];
+  LoginErrorFeedbackContactTooLong = 12 [(basepb.error_info) = {tip_desc:"联系方式长度需在30字符以内"}];
+  LoginErrorTokenExpiredIsReconnect = 13 [(basepb.error_info) = {tip_desc:"token已过期"}];
+}
+
+message LoginReq{
+  string username = 1;
+  string password = 2;
+}
+
+message LoginRsp{
+  int64 login_result = 1;
+}

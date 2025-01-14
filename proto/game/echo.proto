@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package game;
+option go_package = "pbmsg/game";
+
+import "error.proto";
+
+enum EchoErrorCode {
+    EchoErrorTest1 = 0 [(basepb.error_info) = {tip_desc:"测试错误1"}];
+}
+
+message LoginSuccessReq{
+    string user_name = 1;
+}
+
+message LoginSuccessRsp{
+    string user_name = 1;
+}
+
+message EchoReq{
+    string msg = 1;
+}
+
+message EchoRsp{
+    string msg = 1;
+}
