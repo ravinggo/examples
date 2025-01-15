@@ -14,13 +14,13 @@ import (
 )
 
 func main() {
-	stat_ := stat.NewStats()
+	stat_ := stat.NewStat()
 	cnc := natsclient.NewClusterClient(
 		env.GetConfig().ServerType, []string{
 			"nats://192.168.0.166:4222",
 		}, time.Second*10,
 	)
-	totalCount := int64(1e9)
+	totalCount := int64(1e6)
 	runCount := totalCount
 	wg := &sync.WaitGroup{}
 	for i := 0; i < 1000; i++ {

@@ -15,10 +15,10 @@ import (
 
 type Client struct {
 	cnc   *natsclient.ClusterClient
-	stats *stat.Stats
+	stats *stat.Stat
 }
 
-func NewClient(cnc *natsclient.ClusterClient, stats *stat.Stats) *Client {
+func NewClient(cnc *natsclient.ClusterClient, stats *stat.Stat) *Client {
 	return &Client{
 		// cnc: natsclient.NewClusterClient(env.GetConfig().ServerType, urls, time.Second*10),
 		cnc:   cnc,
@@ -29,7 +29,7 @@ func NewClient(cnc *natsclient.ClusterClient, stats *stat.Stats) *Client {
 func (client *Client) LoginReq() *berror.ErrMsg {
 	now := time.Now()
 	defer func() {
-		client.stats.Add(1, time.Since(now))
+		client.stats.Add(time.Since(now))
 	}()
 	c := objectpool.Get[ctx.Int64TraceCtx]()
 	defer objectpool.Put[ctx.Int64TraceCtx](c)
@@ -49,7 +49,7 @@ func (client *Client) LoginReq() *berror.ErrMsg {
 func (client *Client) Echo() *berror.ErrMsg {
 	now := time.Now()
 	defer func() {
-		client.stats.Add(2, time.Since(now))
+		client.stats.Add(time.Since(now))
 	}()
 	c := objectpool.Get[ctx.Int64TraceCtx]()
 	defer objectpool.Put[ctx.Int64TraceCtx](c)
