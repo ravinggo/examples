@@ -3,7 +3,7 @@ module github.com/ravinggo/examples
 go 1.23.3
 
 require (
-	github.com/ravinggo/game v0.0.1
+	github.com/ravinggo/game v0.0.5
 	google.golang.org/protobuf v1.36.2
 )
 

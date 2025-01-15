@@ -17,13 +17,13 @@ func init() {
 
 func setDefaultEnv() error {
 	for k, v := range map[string]string{
-		env.ServerType: "game-server",
+		env.ServerType: "test-client",
 		env.ConfType:   "consul",
 		env.ConfHosts:  "127.0.0.1:8500",
 		env.ConfPath:   "/example-game",
 		env.ConfFormat: "json",
 		env.ServerId:   "0",
-		env.PprofAddr:  ":6060",
+		env.PprofAddr:  ":6061",
 	} {
 		k = strings.TrimSpace(k)
 		v = strings.TrimSpace(v)

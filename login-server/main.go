@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	s := service.NewLoginServer([]string{"127.0.0.1:4222"}, false, 0, 0, time.Second*10)
+	s := service.NewLoginServer([]string{"nats://192.168.0.166:4222"}, false, 0, 0, time.Second*10)
 	s.Start()
 	closer.WaitClose(
 		func() {
