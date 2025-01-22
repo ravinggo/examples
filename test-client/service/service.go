@@ -6,7 +6,7 @@ import (
 	"github.com/ravinggo/game/common/berror"
 	"github.com/ravinggo/game/common/ctx"
 	"github.com/ravinggo/game/common/natsclient"
-	"github.com/ravinggo/game/common/objectpool"
+	"github.com/ravinggo/objectpool"
 
 	"github.com/ravinggo/examples/pbmsg/game"
 	"github.com/ravinggo/examples/pbmsg/login"

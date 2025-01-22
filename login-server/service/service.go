@@ -17,7 +17,7 @@ import (
 )
 
 type LoginServer struct {
-	*service.BaseService[ctx.Int64TraceCtx, *ctx.Int64TraceCtx]
+	*service.BaseService[ctx.IntTrace, *ctx.IntTrace]
 }
 
 func NewLoginServer(
@@ -28,7 +28,7 @@ func NewLoginServer(
 	rpcTimeout time.Duration,
 ) *LoginServer {
 	return &LoginServer{
-		BaseService: service.NewBaseService[ctx.Int64TraceCtx, *ctx.Int64TraceCtx](
+		BaseService: service.NewBaseService[ctx.IntTrace, *ctx.IntTrace](
 			natsUrls, lockQueueThread, hashMode, taskMode, rpcTimeout,
 		),
 	}

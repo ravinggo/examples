@@ -17,7 +17,7 @@ import (
 )
 
 type GameServer struct {
-	*service.BaseService[ctx.Int64TraceCtx, *ctx.Int64TraceCtx]
+	*service.BaseService[ctx.IntTrace, *ctx.IntTrace]
 }
 
 func NewGameServer(
@@ -28,7 +28,7 @@ func NewGameServer(
 	rpcTimeout time.Duration,
 ) *GameServer {
 	return &GameServer{
-		BaseService: service.NewBaseService[ctx.Int64TraceCtx, *ctx.Int64TraceCtx](
+		BaseService: service.NewBaseService[ctx.IntTrace](
 			natsUrls,
 			lockQueueThread,
 			hashMode,

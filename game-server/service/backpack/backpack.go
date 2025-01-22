@@ -13,11 +13,11 @@ import (
 )
 
 type BackPack struct {
-	svc *service.BaseService[ctx.Int64TraceCtx, *ctx.Int64TraceCtx]
+	svc *service.BaseService[ctx.IntTrace, *ctx.IntTrace]
 }
 
 func NewBackpack(
-	svc *service.BaseService[ctx.Int64TraceCtx, *ctx.Int64TraceCtx],
+	svc *service.BaseService[ctx.IntTrace, *ctx.IntTrace],
 ) *BackPack {
 	return &BackPack{
 		svc: svc,

@@ -24,6 +24,7 @@ func setDefaultEnv() error {
 		env.ConfFormat: "json",
 		env.ServerId:   "0",
 		env.PprofAddr:  ":6060",
+		env.LogAsync:   "1",
 	} {
 		k = strings.TrimSpace(k)
 		v = strings.TrimSpace(v)
