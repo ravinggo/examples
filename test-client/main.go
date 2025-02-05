@@ -6,7 +6,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	env "github.com/ravinggo/game/common/base-env"
+	"github.com/nats-io/nats.go"
 	"github.com/ravinggo/game/common/natsclient"
 
 	"github.com/ravinggo/examples/test-client/service"
@@ -16,9 +16,9 @@ import (
 func main() {
 	stat_ := stat.NewStat()
 	cnc := natsclient.NewClusterClient(
-		env.GetConfig().ServerType, []string{
+		[]string{
 			"nats://192.168.0.166:4222",
-		}, time.Second*10,
+		}, nats.Timeout(time.Second*10),
 	)
 	totalCount := int64(1e6)
 	runCount := totalCount
