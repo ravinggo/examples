@@ -56,11 +56,14 @@ func (client *Client) Echo() *berror.ErrMsg {
 	c.TD.TraceId = "123XASDASDASD"
 	rpc := natsclient.NewClusterRequest[game.EchoReq, game.EchoRsp]()
 	defer rpc.Free()
-	rpc.Req.Msg = "asdasdasda"
+	const msg = "asdasdasda"
+	rpc.Req.Msg = msg
 	err := rpc.Request(client.cnc, c)
 	if err != nil {
 		return err
 	}
-
+	if rpc.Resp.Msg != msg {
+		return berror.NewProtocolStr("rpc.Resp.Msg != " + msg)
+	}
 	return nil
 }
