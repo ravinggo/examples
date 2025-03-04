@@ -10,9 +10,9 @@ require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/mailru/easyjson v0.9.0
 	github.com/nats-io/nats.go v1.39.1
-	github.com/ravinggo/game v0.1.5
+	github.com/ravinggo/game v0.1.7
 	github.com/ravinggo/objectpool v1.0.1
-	github.com/ravinggo/tools v0.0.2
+	github.com/ravinggo/tools v0.0.3
 	google.golang.org/protobuf v1.36.5
 )
 

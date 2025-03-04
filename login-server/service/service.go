@@ -2,7 +2,6 @@ package service
 
 import (
 	"reflect"
-	"time"
 
 	"github.com/ravinggo/game/common/berror"
 	"github.com/ravinggo/game/common/ctx"
@@ -22,14 +21,10 @@ type LoginServer struct {
 
 func NewLoginServer(
 	natsUrls []string,
-	lockQueueThread bool,
-	hashMode service.HashRunMode,
-	taskMode service.TaskRunMode,
-	rpcTimeout time.Duration,
 ) *LoginServer {
 	return &LoginServer{
 		BaseService: service.NewBaseService[ctx.IntTrace, *ctx.IntTrace](
-			natsUrls, lockQueueThread, hashMode, taskMode, rpcTimeout,
+			natsUrls,
 		),
 	}
 }
