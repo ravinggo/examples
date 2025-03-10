@@ -6,7 +6,6 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/nats-io/nats.go"
 	"github.com/ravinggo/game/common/natsclient"
 
 	"github.com/ravinggo/examples/test-client/service"
@@ -18,7 +17,7 @@ func main() {
 	cnc := natsclient.NewClusterClient(
 		[]string{
 			"nats://192.168.0.166:4222",
-		}, nats.Timeout(time.Second*10),
+		}, time.Second*10,
 	)
 	totalCount := int64(1e6)
 	runCount := totalCount
