@@ -4,7 +4,7 @@ import (
 	"github.com/ravinggo/game/common/berror"
 	"github.com/ravinggo/game/common/ctx"
 	"github.com/ravinggo/game/common/handler"
-	"github.com/ravinggo/game/common/localevent"
+	callerlocalevent "github.com/ravinggo/game/common/localevent/caller-local-event"
 	"github.com/ravinggo/game/common/service"
 
 	"github.com/ravinggo/examples/errmsg"
@@ -67,7 +67,7 @@ func (bp *BackPack) AddItem(c *ctx.Int64TraceCtx, req *game.AddItemReq, resp *ga
 		Cid:   req.Cid,
 		Value: after,
 	}
-	return localevent.Call(
+	return callerlocalevent.Call(
 		c, event.ItemChangeEvent{
 			Id:           req.Cid,
 			Cid:          req.Cid,
@@ -88,7 +88,7 @@ func (bp *BackPack) SubItem(c *ctx.Int64TraceCtx, req *game.SubItemReq, resp *ga
 		Cid:   req.Id,
 		Value: after,
 	}
-	return localevent.Call(
+	return callerlocalevent.Call(
 		c, event.ItemChangeEvent{
 			Id:           req.Id,
 			Cid:          req.Id,

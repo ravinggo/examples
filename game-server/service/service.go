@@ -6,7 +6,7 @@ import (
 	"github.com/ravinggo/game/common/berror"
 	"github.com/ravinggo/game/common/ctx"
 	"github.com/ravinggo/game/common/handler"
-	"github.com/ravinggo/game/common/localevent"
+	callerlocalevent "github.com/ravinggo/game/common/localevent/caller-local-event"
 	"github.com/ravinggo/game/common/logger"
 	"github.com/ravinggo/game/common/service"
 
@@ -41,7 +41,7 @@ func (s *GameServer) Start() {
 func (s *GameServer) Router() {
 	handler.RegisterRPC(s.GetHandler(), "login server login success request", s.LoginSuccess)
 	handler.RegisterRPCResp(s.GetHandler(), "game server echo test", s.Echo)
-	localevent.Register("GameServer ItemChange", s.ItemChange)
+	callerlocalevent.Register("GameServer ItemChange", s.ItemChange)
 
 	backpack.NewBackpack(s.BaseService).Router()
 }
