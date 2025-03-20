@@ -9,7 +9,7 @@ protoc.exe -I. --gogogame_out=plugins=googleProto+newStringer:.. ./game/*.proto
 CALL :CHECK_FAIL
 
 @echo on
-.\gen-proto-error.exe --parseDir=./login,./game --txtPath=./error_code.txt --goPath=../errmsg --pkgName=errmsg
+gen-proto-error.exe --parseDir=./login,./game --txtPath=./error_code.txt --goPath=../errmsg --pkgName=errmsg
 @echo off
 CALL :CHECK_FAIL
 

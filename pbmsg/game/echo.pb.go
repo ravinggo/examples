@@ -245,7 +245,7 @@ func init() {
 func init() { proto.RegisterFile("game/echo.proto", fileDescriptor_0b9322c06229281b) }
 
 var fileDescriptor_0b9322c06229281b = []byte{
-	// 244 bytes of a gzipped FileDescriptorProto
+	// 240 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x4f, 0x4f, 0xcc, 0x4d,
 	0xd5, 0x4f, 0x4d, 0xce, 0xc8, 0xd7, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x01, 0x09, 0x48,
 	0x71, 0xa7, 0x16, 0x15, 0xe5, 0x17, 0x41, 0x84, 0x94, 0xf4, 0xb8, 0xf8, 0x7d, 0xf2, 0xd3, 0x33,
@@ -256,12 +256,11 @@ var fileDescriptor_0b9322c06229281b = []byte{
 	0x25, 0x8b, 0x0b, 0x30, 0x25, 0xb5, 0x2c, 0xb8, 0x78, 0x41, 0x92, 0xae, 0x20, 0xc7, 0x3a, 0xe7,
 	0xa7, 0xa4, 0x0a, 0xa9, 0x73, 0xf1, 0xc1, 0x05, 0x42, 0x52, 0x8b, 0x4b, 0x0c, 0x05, 0x18, 0xa4,
 	0x84, 0xbb, 0xb6, 0x4a, 0xf0, 0x0b, 0xf1, 0x3e, 0xdb, 0xda, 0xfd, 0x62, 0xfd, 0xd4, 0x97, 0x53,
-	0x66, 0xbe, 0x58, 0xbf, 0xde, 0xd0, 0xc9, 0xe2, 0xc6, 0x43, 0x39, 0x86, 0x15, 0x8f, 0xe4, 0x18,
-	0x4f, 0x3c, 0x92, 0x63, 0xbc, 0xf0, 0x48, 0x8e, 0xf1, 0xc1, 0x23, 0x39, 0xc6, 0x17, 0x8f, 0xe4,
-	0x18, 0x3e, 0x3c, 0x92, 0x63, 0x9c, 0xf0, 0x58, 0x8e, 0xe1, 0xc4, 0x63, 0x39, 0xc6, 0x0b, 0x8f,
-	0xe5, 0x18, 0x6e, 0x3c, 0x96, 0x63, 0x88, 0xe2, 0x2a, 0x48, 0xca, 0x2d, 0x4e, 0xd7, 0x07, 0x05,
-	0x4d, 0x12, 0x1b, 0x38, 0x50, 0x8c, 0x01, 0x01, 0x00, 0x00, 0xff, 0xff, 0x5a, 0xdd, 0x3c, 0xe7,
-	0x3a, 0x01, 0x00, 0x00,
+	0x66, 0xbe, 0x58, 0xbf, 0xde, 0xd0, 0xc9, 0xe4, 0xc6, 0x43, 0x39, 0x86, 0x13, 0x8f, 0xe4, 0x18,
+	0x2f, 0x3c, 0x92, 0x63, 0x7c, 0xf0, 0x48, 0x8e, 0xf1, 0xc5, 0x23, 0x39, 0x86, 0x0f, 0x8f, 0xe4,
+	0x18, 0x27, 0x3c, 0x96, 0x63, 0x38, 0xf1, 0x58, 0x8e, 0xf1, 0xc2, 0x63, 0x39, 0x86, 0x1b, 0x8f,
+	0xe5, 0x18, 0xa2, 0xb8, 0x0a, 0x92, 0x72, 0x8b, 0xd3, 0xf5, 0x41, 0xc1, 0x92, 0xc4, 0x06, 0x0e,
+	0x10, 0x63, 0x40, 0x00, 0x00, 0x00, 0xff, 0xff, 0x23, 0xa9, 0x39, 0x80, 0x36, 0x01, 0x00, 0x00,
 }
 
 func (x EchoErrorCode) String() string {
@@ -270,102 +269,6 @@ func (x EchoErrorCode) String() string {
 		return s
 	}
 	return strconv.Itoa(int(x))
-}
-func (this *LoginSuccessReq) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*LoginSuccessReq)
-	if !ok {
-		that2, ok := that.(LoginSuccessReq)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.UserName != that1.UserName {
-		return false
-	}
-	return true
-}
-func (this *LoginSuccessRsp) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*LoginSuccessRsp)
-	if !ok {
-		that2, ok := that.(LoginSuccessRsp)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.UserName != that1.UserName {
-		return false
-	}
-	return true
-}
-func (this *EchoReq) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*EchoReq)
-	if !ok {
-		that2, ok := that.(EchoReq)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Msg != that1.Msg {
-		return false
-	}
-	return true
-}
-func (this *EchoRsp) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*EchoRsp)
-	if !ok {
-		that2, ok := that.(EchoRsp)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Msg != that1.Msg {
-		return false
-	}
-	return true
 }
 func (m *LoginSuccessReq) ProtoReflect() google_golang_org_protobuf_reflect_protoreflect.Message {
 	return nil
@@ -379,6 +282,9 @@ func (m *EchoReq) ProtoReflect() google_golang_org_protobuf_reflect_protoreflect
 func (m *EchoRsp) ProtoReflect() google_golang_org_protobuf_reflect_protoreflect.Message {
 	return nil
 }
+
+var _ google_golang_org_protobuf_reflect_protoreflect.FullName = ""
+
 func (m *LoginSuccessReq) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -513,7 +419,7 @@ func encodeVarintEcho(dAtA []byte, offset int, v uint64) int {
 
 var _ = github_com_ravinggo_tools_jsonany.Any{}
 
-func (m *LoginSuccessReq) JsonBytes(w *github_com_mailru_easyjson_jwriter.Writer) {
+func (m *LoginSuccessReq) MarshalEasyJSON(w *github_com_mailru_easyjson_jwriter.Writer) {
 	if m == nil {
 		w.RawString("null")
 		return
@@ -534,7 +440,7 @@ func (m *LoginSuccessReq) JsonBytes(w *github_com_mailru_easyjson_jwriter.Writer
 
 }
 
-func (m *LoginSuccessRsp) JsonBytes(w *github_com_mailru_easyjson_jwriter.Writer) {
+func (m *LoginSuccessRsp) MarshalEasyJSON(w *github_com_mailru_easyjson_jwriter.Writer) {
 	if m == nil {
 		w.RawString("null")
 		return
@@ -555,7 +461,7 @@ func (m *LoginSuccessRsp) JsonBytes(w *github_com_mailru_easyjson_jwriter.Writer
 
 }
 
-func (m *EchoReq) JsonBytes(w *github_com_mailru_easyjson_jwriter.Writer) {
+func (m *EchoReq) MarshalEasyJSON(w *github_com_mailru_easyjson_jwriter.Writer) {
 	if m == nil {
 		w.RawString("null")
 		return
@@ -576,7 +482,7 @@ func (m *EchoReq) JsonBytes(w *github_com_mailru_easyjson_jwriter.Writer) {
 
 }
 
-func (m *EchoRsp) JsonBytes(w *github_com_mailru_easyjson_jwriter.Writer) {
+func (m *EchoRsp) MarshalEasyJSON(w *github_com_mailru_easyjson_jwriter.Writer) {
 	if m == nil {
 		w.RawString("null")
 		return
@@ -599,7 +505,7 @@ func (m *EchoRsp) JsonBytes(w *github_com_mailru_easyjson_jwriter.Writer) {
 
 func (m *LoginSuccessReq) MarshalJSON() ([]byte, error) {
 	w := github_com_mailru_easyjson_jwriter.Writer{Buffer: github_com_mailru_easyjson_buffer.Buffer{Buf: make([]byte, 0, 2048)}}
-	m.JsonBytes(&w)
+	m.MarshalEasyJSON(&w)
 	return w.BuildBytes()
 }
 func (m *LoginSuccessReq) String() string {
@@ -612,7 +518,7 @@ func (m *LoginSuccessReq) GoString() string {
 
 func (m *LoginSuccessRsp) MarshalJSON() ([]byte, error) {
 	w := github_com_mailru_easyjson_jwriter.Writer{Buffer: github_com_mailru_easyjson_buffer.Buffer{Buf: make([]byte, 0, 2048)}}
-	m.JsonBytes(&w)
+	m.MarshalEasyJSON(&w)
 	return w.BuildBytes()
 }
 func (m *LoginSuccessRsp) String() string {
@@ -625,7 +531,7 @@ func (m *LoginSuccessRsp) GoString() string {
 
 func (m *EchoReq) MarshalJSON() ([]byte, error) {
 	w := github_com_mailru_easyjson_jwriter.Writer{Buffer: github_com_mailru_easyjson_buffer.Buffer{Buf: make([]byte, 0, 2048)}}
-	m.JsonBytes(&w)
+	m.MarshalEasyJSON(&w)
 	return w.BuildBytes()
 }
 func (m *EchoReq) String() string {
@@ -638,7 +544,7 @@ func (m *EchoReq) GoString() string {
 
 func (m *EchoRsp) MarshalJSON() ([]byte, error) {
 	w := github_com_mailru_easyjson_jwriter.Writer{Buffer: github_com_mailru_easyjson_buffer.Buffer{Buf: make([]byte, 0, 2048)}}
-	m.JsonBytes(&w)
+	m.MarshalEasyJSON(&w)
 	return w.BuildBytes()
 }
 func (m *EchoRsp) String() string {

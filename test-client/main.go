@@ -6,6 +6,7 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/ravinggo/game/common/logger"
 	"github.com/ravinggo/game/common/natsclient"
 
 	"github.com/ravinggo/examples/test-client/service"
@@ -13,6 +14,7 @@ import (
 )
 
 func main() {
+	logger.InitDefaultLogger()
 	stat_ := stat.NewStat()
 	cnc := natsclient.NewClusterClient(
 		[]string{
