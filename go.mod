@@ -9,9 +9,9 @@ tool github.com/ravinggo/tools/protoc-gen-gogogame
 require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/mailru/easyjson v0.9.0
-	github.com/ravinggo/game v0.1.21
+	github.com/ravinggo/game v0.1.22
 	github.com/ravinggo/objectpool v1.0.2
-	github.com/ravinggo/tools v0.0.15
+	github.com/ravinggo/tools v0.0.16
 	google.golang.org/protobuf v1.36.5
 )
 
