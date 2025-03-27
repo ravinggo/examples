@@ -11,7 +11,7 @@ require (
 	github.com/mailru/easyjson v0.9.0
 	github.com/ravinggo/game v0.1.22
 	github.com/ravinggo/objectpool v1.0.2
-	github.com/ravinggo/tools v0.0.16
+	github.com/ravinggo/tools v0.0.17
 	google.golang.org/protobuf v1.36.5
 )
 
